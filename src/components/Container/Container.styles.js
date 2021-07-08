@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const ContainerStyled = styled.div`
-  background-color: ${({isGrey}) => isGrey ? ({theme}) => theme.colors.background : ({theme}) => theme.colors.basic};
-  padding: 2rem 0;
+  background-color: ${({color}) => color ? color : ({theme}) => theme.colors.basic};
+  padding: 4rem 0;
+  display: ${({flex}) => flex};
+  justify-content: ${({justify}) => justify};
+  align-items: ${({align}) => align};
     `;

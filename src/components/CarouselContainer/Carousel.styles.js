@@ -5,7 +5,6 @@ export const CarouselStyled = styled.div`
   height: 70vh;
   margin: 0 auto;
   display: flex;
-  //border: 1px solid #000;
   justify-content: center;
   align-items: center;
 `;

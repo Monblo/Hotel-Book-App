@@ -15,7 +15,7 @@ import room2 from '../../images/room2.jpg';
 
 
 export const OurRooms = () => {
-    return <ContainerStyled isGrey>
+    return <ContainerStyled color={({theme}) => theme.colors.background}>
 
         <H2 title={'Our Rooms'} color={({theme}) => theme.colors.basic}/>
 
@@ -23,7 +23,7 @@ export const OurRooms = () => {
             <div style={{margin:'0 1rem', maxWidth:'20.625rem'}}>
             <P align={'right'} text={`Our 14 elegant guest rooms completely enveloped by nature, are juxtaposed around an epic tropical pool.`}/>
             </div>
-            <ul style={{padding: '0'}}>
+            <ul style={{padding: '0 2rem'}}>
                 <Li icon={<FaUmbrellaBeach/>} text={'Jungle Pool & Bar'} />
                 <Li icon={<MdFreeBreakfast/>} text={'Breakfast included'}/>
                 <Li icon={<GiSoap/>} text={'All natural soaps, shampoos, and lotions'}/>
@@ -35,7 +35,7 @@ export const OurRooms = () => {
             </ul>
         </TextContainerStyled>
         <TextContainerStyled>
-            <div style={{padding: '0 1.25rem 4rem', maxWidth:'30.125rem'}}>
+            <div style={{padding: '0 1.25rem', maxWidth:'30.125rem'}}>
                 <ImageStyled src={room1}/>
                 <P align={'left'} text={'STANDARD ROOM'} />
                 <P align={'left'} text={'PETITE JUNGLE PEACE'}/>
@@ -55,7 +55,7 @@ export const OurRooms = () => {
                 <br />
                 <Li text={'A/C 24-Hour'}/>
             </div>
-            <div style={{padding: '0 1.25rem 5rem', maxWidth:'30.125rem'}}>
+            <div style={{padding: '0 1.25rem', maxWidth:'30.125rem'}}>
                 <ImageStyled src={room2}/>
                 <P align={'left'} text={'SUITE DELUXE'} />
                 <P align={'left'} text={'HIDDEN REFUGE'}/>

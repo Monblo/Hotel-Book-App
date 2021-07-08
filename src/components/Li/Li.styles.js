@@ -7,5 +7,4 @@ export const LiStyled = styled.li`
   color: ${({theme}) => theme.colors.basic};
   line-height: 1.875;
   list-style-type: none;
-  margin: 0 1rem;
     `;

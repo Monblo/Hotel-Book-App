@@ -1,10 +1,9 @@
 import React from "react";
+import {InputStyled} from "./Input.styles";
 
-const Input = () => {
+const Input = ({width, placeholder}) => {
     return (
-        <div>
-            <input type="text" />
-        </div>
+            <InputStyled type="text" width={width} placeholder={placeholder}/>
     )
 }
 

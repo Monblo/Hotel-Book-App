@@ -7,5 +7,4 @@ export const PStyled = styled.p`
   color: ${({color}) => color ? color : ({theme}) => theme.colors.basic};
   line-height: 1.875;
   text-align: ${({align}) => align ? align : 'center' };
-  padding: 0 1rem;
   `;
