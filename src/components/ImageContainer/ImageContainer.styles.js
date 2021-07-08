@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import header from "../../images/header.jpg"
 
 export const ImageContainerStyled = styled.div`
   width: 100%;
-  height: 100vh;
-  background-image: url(${header});
+  height: ${({height}) => height};
+  background-image: url(${({url}) => url});
   background-position: center;
   background-size: cover;
   opacity: .8;

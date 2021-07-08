@@ -20,8 +20,10 @@ export const OurRooms = () => {
         <H2 title={'Our Rooms'} color={({theme}) => theme.colors.basic}/>
 
         <TextContainerStyled>
-            <P text={'Our 14 elegant guest rooms, completely enveloped by nature, are juxtaposed around an                  epic tropical pool.'}/>
-            <ul>
+            <div style={{margin:'0 1rem', maxWidth:'20.625rem'}}>
+            <P align={'right'} text={`Our 14 elegant guest rooms completely enveloped by nature, are juxtaposed around an epic tropical pool.`}/>
+            </div>
+            <ul style={{padding: '0'}}>
                 <Li icon={<FaUmbrellaBeach/>} text={'Jungle Pool & Bar'} />
                 <Li icon={<MdFreeBreakfast/>} text={'Breakfast included'}/>
                 <Li icon={<GiSoap/>} text={'All natural soaps, shampoos, and lotions'}/>
@@ -33,11 +35,11 @@ export const OurRooms = () => {
             </ul>
         </TextContainerStyled>
         <TextContainerStyled>
-            <div style={{padding: '0 1.25rem 4rem'}}>
+            <div style={{padding: '0 1.25rem 4rem', maxWidth:'30.125rem'}}>
                 <ImageStyled src={room1}/>
-                <P underImg text={'STANDARD ROOM'} />
-                <P underImg text={'PETITE JUNGLE PEACE'}/>
-                <P underImg text={'Peaceful and private, kick back in comfort with lush views just steps away from our sun deck and a tropical pool.'}/>
+                <P align={'left'} text={'STANDARD ROOM'} />
+                <P align={'left'} text={'PETITE JUNGLE PEACE'}/>
+                <P align={'left'} text={'Peaceful and private, kick back in comfort with lush views just steps away from our sun deck and a tropical pool.'}/>
                 <br />
                 <Li text={'View: Jungle'}/>
                 <br />
@@ -53,12 +55,12 @@ export const OurRooms = () => {
                 <br />
                 <Li text={'A/C 24-Hour'}/>
             </div>
-            <div style={{padding: '0 1.25rem 5rem'}}>
+            <div style={{padding: '0 1.25rem 5rem', maxWidth:'30.125rem'}}>
                 <ImageStyled src={room2}/>
-                <P underImg text={'SUITE DELUXE'} />
-                <P underImg text={'HIDDEN REFUGE'}/>
-                <P underImg text={'STANDARD ROOM'} />
-                <P underImg text={'Our most spacious rooms offer the utmost in privacy and comfort, adorned with bohemian textiles, tropical woods, and modern furnishings.'}/>
+                <P align={'left'} text={'SUITE DELUXE'} />
+                <P align={'left'} text={'HIDDEN REFUGE'}/>
+                <P align={'left'} text={'STANDARD ROOM'} />
+                <P align={'left'} text={'Our most spacious rooms offer the utmost in privacy and comfort, adorned with bohemian textiles, tropical woods, and modern furnishings.'}/>
                 <br />
                 <Li text={'View: Pool & Jungle'}/>
                 <br />
