@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import header from "../../images/header.jpg"
 
-export const HeaderContainerStyled = styled.div`
+export const ImageContainerStyled = styled.div`
   width: 100%;
   height: 100vh;
   background-image: url(${header});

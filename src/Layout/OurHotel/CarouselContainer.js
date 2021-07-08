@@ -21,7 +21,7 @@ const ImageWrapper = styled.div`
     `;
 
 export const CarouselContainer = () => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentImageIndex, setCurrentImageIndex] = useState(1);
 
     const nextImage = () => {
         setCurrentImageIndex(prevIndex => prevIndex + 1)
