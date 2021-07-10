@@ -1,11 +1,15 @@
 import React from "react";
-import Layout from "../../Layout/Layout";
+import {theme} from "../../Utils/Theme";
+import {ThemeProvider} from "styled-components";
+import {HeaderBooking} from "../../Layout/Header/HeaderBooking";
+import {Form} from "../../Layout/Form/Form";
 
 const Booking = () => {
     return (
-        <Layout>
-
-        </Layout>
+        <ThemeProvider theme={theme}>
+            <HeaderBooking />
+            <Form />
+        </ThemeProvider>
     )
 }
 

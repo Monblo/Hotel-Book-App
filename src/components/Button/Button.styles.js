@@ -6,7 +6,14 @@ export const ButtonStyled = styled.button`
     padding: .7rem 0;
     margin-left: 1rem;
     width: 7.5rem;
+    height: 100%;
     background: transparent;
-    color: ${({theme}) => theme.colors.basic};
+    color: ${({theme}) => theme.colors.background};
     border: 2px solid ${({theme}) => theme.colors.basic};
   `;
+
+export const ButtonFormStyled = styled(ButtonStyled)`
+  color: ${({theme}) => theme.colors.dark};
+  border: 2px solid ${({theme}) => theme.colors.dark};
+  margin: 0;
+`;

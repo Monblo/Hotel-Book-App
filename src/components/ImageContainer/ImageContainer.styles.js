@@ -8,6 +8,4 @@ export const ImageContainerStyled = styled.div`
   background-size: cover;
   opacity: .8;
   position: relative;
-  display: flex;
-  justify-content: center;
 `;

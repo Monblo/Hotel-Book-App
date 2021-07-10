@@ -1,10 +1,14 @@
 import React from 'react';
-import {ButtonStyled} from './Button.styles'
+import {ButtonFormStyled, ButtonStyled} from './Button.styles'
 
-const Button = ({text}) => {
+export const Button = ({text}) => {
     return (
         <ButtonStyled> {text}</ButtonStyled>
     );
 };
 
-export {Button};
+export const ButtonForm = ({text}) => {
+    return (
+        <ButtonFormStyled> {text}</ButtonFormStyled>
+    );
+};
