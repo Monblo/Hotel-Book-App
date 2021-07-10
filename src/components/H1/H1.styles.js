@@ -8,6 +8,14 @@ export const H1Styled = styled.h1`
   text-transform: uppercase;
   color: ${({theme}) => theme.colors.name};
   position: absolute;
-  top: 9.375rem;
-  text-align: center;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
   `;
+
+export const H1BookingStyled = styled(H1Styled)`
+  top: 0;
+  left: 0;
+  transform: none;
+  position: relative;
+`;

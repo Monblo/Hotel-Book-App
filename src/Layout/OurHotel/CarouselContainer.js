@@ -32,15 +32,19 @@ export const CarouselContainer = () => {
     };
 
     return <CarouselStyled>
+        <div style={{width: '2.5rem'}}>
         {currentImageIndex !== 0 && <ArrowStyled onClick={prevImage}>
             <MdKeyboardArrowLeft />
         </ArrowStyled>}
+        </div>
         <ImageWrapper>
             <ImageStyled src={images[currentImageIndex]} />
             <ImageStyled src={images[currentImageIndex + 1]} />
         </ImageWrapper>
+        <div style={{width: '2.5rem'}}>
         {currentImageIndex !== images.length - 2 && <ArrowStyled onClick={nextImage}>
             <MdKeyboardArrowRight />
         </ArrowStyled>}
+         </div>
     </CarouselStyled>
 }

@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import './App.css';
+import React from "react";
+import './App.scss';
 import {Home} from "./views/Home/Home";
 import {
     HashRouter,
@@ -11,14 +11,17 @@ import {
 import {Booking} from "./views/Booking/Booking";
 import {NotFound} from "./views/NotFound/NotFound";
 
+
 const App = () => {
   return (
    <HashRouter>
+       <>
        <Switch>
            <Route exact path='/' component={Home}/>
            <Route path='/booking' component={Booking}/>
            <Route path='/*' component={NotFound}/>
        </Switch>
+       </>
    </HashRouter>
   );
 }
