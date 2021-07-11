@@ -14,10 +14,7 @@ export const PriceStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
   cursor: default;
-  
-  ${ImageStyled}:hover ~ & {
-   visibility: visible;
+  border-bottom-right-radius: 1.785rem;
   }
  `;

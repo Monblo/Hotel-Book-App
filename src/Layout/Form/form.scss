@@ -2,3 +2,32 @@
   margin: 3.125rem;
   position: relative;
 }
+
+.label {
+  font-family: Ubuntu, sans-serif;
+  font-size: 1rem;
+  color: #6B6B6B;
+  text-transform: uppercase;
+  display: block;
+  letter-spacing: .2rem;
+  margin: 1rem 0;
+}
+
+.form__input::-webkit-slider-runnable-track{
+  background: #6B6B6B;
+  height: 5px;
+  border-radius: 3px;
+}
+
+.form__input::-webkit-slider-thumb{
+  margin: -6px 0 0 0;
+}
+
+hr {
+  color: #000;
+  background-color: #000;
+  border: none;
+  height: .1rem;
+  width: 9.375rem;
+  margin: 1.875rem auto;
+}
