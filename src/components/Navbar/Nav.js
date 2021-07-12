@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {SidebarData} from "./SidebarData";
 import {Link, NavLink} from "react-router-dom";
-import './nav.scss';
+import '../../App.scss'
 import {AiOutlineClose} from "react-icons/all";
 
 export const Navbar = () => {

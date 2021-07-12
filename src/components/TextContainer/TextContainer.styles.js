@@ -5,4 +5,16 @@ export const TextContainerStyled = styled.div`
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
+  ${({theme}) => theme.media.mobile} {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  ${({theme}) => theme.media.tablet} {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
     `;

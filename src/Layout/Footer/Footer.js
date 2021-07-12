@@ -1,5 +1,5 @@
 import React from 'react';
-import {ContainerStyled} from "../../components/Container/Container.styles";
+import {ContainerFooterStyled} from "../../components/Container/Container.styles";
 import {H2} from "../../components/H2/H2";
 import {P} from "../../components/P/P";
 import Input from "../../components/Input/Input";
@@ -7,7 +7,7 @@ import {Button} from "../../components/Button/Button";
 
 export const Footer = () => {
     return (
-        <ContainerStyled color={({theme}) => theme.colors.footer} flex={'flex'} justify={'space-around'}>
+        <ContainerFooterStyled color={({theme}) => theme.colors.footer} flex={'flex'} justify={'space-around'}>
             <div>
                 <H2 color={({theme}) => theme.colors.basic} title={'Contact'} size={'1.5rem'}/>
                 <P text={'Reservations:  EMAIL | +XX XXX XXX XXX'} />
@@ -21,6 +21,6 @@ export const Footer = () => {
                 <Button text={'SIGN UP'}/>
                 </div>
             </div>
-    </ContainerStyled>
+    </ContainerFooterStyled>
     )
 }

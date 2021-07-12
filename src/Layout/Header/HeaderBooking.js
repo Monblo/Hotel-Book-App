@@ -1,5 +1,5 @@
 import React from 'react';
-import './header__booking.scss'
+import '../../App.scss'
 import {H1Booking} from "../../components/H1/H1";
 import {Link} from "react-router-dom";
 

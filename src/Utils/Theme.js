@@ -13,5 +13,9 @@ export const theme = {
         light: 300,
         regular: 400,
         mid: 500
+    },
+    media: {
+        mobile: '@media (max-width: 420px)',
+        tablet: '@media (min-width: 420px) and (max-width: 1025px)'
     }
 }

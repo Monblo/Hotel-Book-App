@@ -20,7 +20,7 @@ export const OurRooms = () => {
         <H2 title={'Our Rooms'} color={({theme}) => theme.colors.basic}/>
 
         <TextContainerStyled>
-            <div style={{margin:'0 1rem', maxWidth:'20.625rem'}}>
+            <div style={{maxWidth:'20.625rem'}}>
             <P align={'right'} text={`Our 14 elegant guest rooms completely enveloped by nature, are juxtaposed around an epic tropical pool.`}/>
             </div>
             <ul style={{padding: '0 2rem'}}>
@@ -35,7 +35,7 @@ export const OurRooms = () => {
             </ul>
         </TextContainerStyled>
         <TextContainerStyled>
-            <div style={{padding: '0 1.25rem', maxWidth:'30.125rem'}}>
+            <div className={'ourRooms'}>
                 <ImageStyled src={room1}/>
                 <P align={'left'} text={'STANDARD ROOM'} />
                 <P align={'left'} text={'PETITE JUNGLE PEACE'}/>
@@ -55,7 +55,7 @@ export const OurRooms = () => {
                 <br />
                 <Li text={'A/C 24-Hour'}/>
             </div>
-            <div style={{padding: '0 1.25rem', maxWidth:'30.125rem'}}>
+            <div className={'ourRooms'}>
                 <ImageStyled src={room2}/>
                 <P align={'left'} text={'SUITE DELUXE'} />
                 <P align={'left'} text={'HIDDEN REFUGE'}/>

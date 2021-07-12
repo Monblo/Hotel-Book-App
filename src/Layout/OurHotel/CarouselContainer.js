@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import {CarouselStyled} from "../../components/CarouselContainer/Carousel.styles";
+import {ImageCarouselStyled, ImageStyled} from "../../components/Image/Image.styles";
+import {MdKeyboardArrowRight, MdKeyboardArrowLeft} from 'react-icons/md';
+import {ArrowStyled} from "../../components/Arrow/Arrow.styles";
+import styled from "styled-components";
 import hotel1 from "../../images/hotel1.jpg";
 import hotel2 from "../../images/hotel2.jpg";
 import hotel3 from "../../images/hotel3.jpg";
 import hotel4 from "../../images/hotel4.jpg";
 import hotel5 from "../../images/hotel5.jpg";
 import hotel6 from "../../images/hotel6.jpg";
-import {ImageStyled} from "../../components/Image/Image.styles";
-import {MdKeyboardArrowRight, MdKeyboardArrowLeft} from 'react-icons/md';
-import {ArrowStyled} from "../../components/Arrow/Arrow.styles";
-import styled from "styled-components";
+import '../../App.scss';
 
-const images = [hotel1, hotel2, hotel3, hotel4, hotel5, hotel6];
+const images=[hotel1, hotel2, hotel3, hotel4, hotel5, hotel6]
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -38,13 +39,18 @@ export const CarouselContainer = () => {
         </ArrowStyled>}
         </div>
         <ImageWrapper>
-            <ImageStyled src={images[currentImageIndex]} />
-            <ImageStyled src={images[currentImageIndex + 1]} />
+            <ImageCarouselStyled src={images[currentImageIndex]} />
+            <ImageCarouselStyled src={images[currentImageIndex + 1]} className={'media__desktop'}/>
         </ImageWrapper>
-        <div style={{width: '2.5rem'}}>
+        <div className={'media__desktop-arrow'}>
         {currentImageIndex !== images.length - 2 && <ArrowStyled onClick={nextImage}>
             <MdKeyboardArrowRight />
         </ArrowStyled>}
          </div>
+        <div className={'media__mobile-tablet-arrow'}>
+            {currentImageIndex !== images.length - 1 && <ArrowStyled onClick={nextImage}>
+                <MdKeyboardArrowRight />
+            </ArrowStyled>}
+        </div>
     </CarouselStyled>
 }

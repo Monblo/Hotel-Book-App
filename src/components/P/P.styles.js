@@ -7,4 +7,12 @@ export const PStyled = styled.p`
   color: ${({color}) => color ? color : ({theme}) => theme.colors.basic};
   line-height: 1.875;
   text-align: ${({align}) => align ? align : 'center' };
+ 
+  ${({theme}) => theme.media.mobile} {
+    text-align: center;
+  }
+
+  ${({theme}) => theme.media.tablet} {
+    text-align: center;
+  }
   `;
