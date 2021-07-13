@@ -14,12 +14,19 @@ import {RoomContext} from "./Layout/Context/RoomContext";
 import data from "./data";
 
 const App = () => {
-    const [rooms, setRooms] = useState([]);
-    const type = 'all';
-    const capacity = 1;
-    const [price, setPrice] = useState(0);
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(0);
+
+    const [form, setForm] = useState({
+        rooms: {},
+        type: 'All',
+        capacity: 1,
+        price: 0,
+        minPrice: 0,
+        maxPrice: 100
+    });
+
+    const handleChange = (e) => {
+        setForm({...form, [e.target.name] : e.target.value})
+    };
 
     const formatData = (items) => {
         return items.map(item => {
@@ -29,12 +36,12 @@ const App = () => {
     };
 
     useEffect( () => {
-        setRooms(formatData(data))
+        setForm({...form, rooms: formatData(data)})
+        // console.log(form.rooms)
     },[]);
 
-    console.log(rooms)
 
-    const roomContextValue = {rooms, type, capacity, price, minPrice, maxPrice}
+    const roomContextValue = {...form, handleChange}
 
   return (
       <RoomContext.Provider value={roomContextValue}>

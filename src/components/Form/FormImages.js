@@ -1,7 +1,7 @@
 import React from "react";
-import {ImageStyled} from "../../components/Image/Image.styles";
-import {Price} from "../../components/Price/Price";
-import {ContainerFooterStyled} from "../../components/Container/Container.styles";
+import {ImageStyled} from "../Image/Image.styles";
+import {Price} from "../Price/Price";
+import {ContainerFooterStyled} from "../Container/Container.styles";
 import room1 from '../../images/room1.jpg';
 import room2 from '../../images/room2.jpg';
 

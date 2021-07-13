@@ -1,33 +1,30 @@
-import React, {useState, useContext} from "react";
+import React, {useContext} from "react";
 import '../../App.scss'
-import {H2} from "../../components/H2/H2";
-import {ButtonForm} from "../../components/Button/Button";
+import {H2} from "../H2/H2";
+import {ButtonForm} from "../Button/Button";
 import {FormStyled} from "./Form.styles";
 import {FormImages} from "./FormImages";
-import {CalendarPicker} from "../../components/Calendar/Calendar";
-import {RoomContext} from "../../context";
+import {CalendarPicker} from "../Calendar/Calendar";
+import {RoomContext} from "../../Layout/Context/RoomContext";
 
-export const Form = ({rooms}) => {
-    //hooks
+export const Form = () => {
     const context = useContext(RoomContext);
-    const {
-        type,
-        capacity,
-        price,
-        minPrice,
-        maxPrice,
-        handleChange
-    } = context;
+    const {rooms, type, capacity, price, minPrice, maxPrice, handleChange} = context;
+    // console.log(rooms)
+    // console.log(context)
 
-    // //get items from data
-    // const getItems = (items, value) => { return [...new Set(items.map(el => el.value))]
-    // };
-    //
-    // //add all to types
-    // let types = getItems(rooms, type);
-    // types = ['all', ...types];
-    // console.log(types)
+    // get items from data
+    const getItems = (items, value) => {
+        return [...new Set(items.map(el => el[value]))]
+    };
 
+    // get all types
+    let types = getItems(rooms, 'name');
+    types = ['All', ...types];
+
+    // //get all capacity
+    let guests = getItems(rooms, 'capacity');
+    guests = [1, ...guests];
 
     return (
         <section>
@@ -43,10 +40,7 @@ export const Form = ({rooms}) => {
                         value={type}
                         onChange={handleChange}
                         >
-                        {/*{rooms[type].map((item, index) => <option key={index} value={item}>{item}</option>)}*/}
-                        {/*<option value="all">All</option>*/}
-                        {/*<option value="standard">STANDARD ROOM</option>*/}
-                        {/*<option value="suite">SUITE DELUXE</option>*/}
+                        {types.map((item, index) => <option key={index} value={item}>{item}</option>)}
                     </select>
                 </div>
                 {/*guests number*/}
@@ -56,17 +50,24 @@ export const Form = ({rooms}) => {
                         name='capacity'
                         id='capacity'
                         value={capacity}
-                        onChange={handleChange}>
-                        {/*<option value="one">1</option>*/}
-                        <option value="two">2</option>
-                        <option value="three">3</option>
+                        onChange={handleChange}
+                        >
+                        {guests.map((item, index) => <option key={index} value={item}>{item}</option>)}
                     </select>
                 </div>
                 {/*price slider*/}
                 <div>
-                    <label htmlFor={'price'}>price</label>
-                    <input type='range' name='price' id='price' min='0' max='100'
-                    className={'form__input'}/>
+                    <label htmlFor={'price'}>price ${price}</label>
+                    <input
+                        type='range'
+                        name='price'
+                        id='price'
+                        step = '50'
+                        min={minPrice}
+                        max={maxPrice}
+                        onChange={handleChange}
+                        className={'form__input'}
+                    />
                 </div>
                 {/*date calendar*/}
                 <div>
@@ -75,7 +76,6 @@ export const Form = ({rooms}) => {
                 </div>
                 <ButtonForm text={'SUBMIT'}/>
             </FormStyled>
-
             <FormImages />
         </section>
     )
