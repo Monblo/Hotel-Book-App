@@ -1,12 +1,12 @@
 export const SidebarData = [
     {
         title: 'GALLERY',
-        path: '/',
+        path: '#hotel',
         cName: 'nav__text'
     },
     {
         title: 'ROOMS',
-        path: '/',
+        path: '#rooms',
         cName: 'nav__text'
     },
     {
@@ -16,7 +16,7 @@ export const SidebarData = [
     },
     {
         title: 'CONTACT',
-        path: '#/contact',
+        path: '#footer',
         cName: 'nav__text'
     },
 ];

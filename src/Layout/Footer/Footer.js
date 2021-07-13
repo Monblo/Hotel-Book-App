@@ -8,7 +8,7 @@ import {WeatherInfo} from "../../components/Weather/Weather";
 
 export const Footer = () => {
     return (
-        <ContainerFooterStyled color={({theme}) => theme.colors.footer} flex={'flex'} justify={'space-around'}>
+        <ContainerFooterStyled id='footer' color={({theme}) => theme.colors.footer} flex={'flex'} justify={'space-around'}>
             <div >
                 <H2 color={({theme}) => theme.colors.basic} title={'Contact'} size={'1.5rem'}/>
                 <P text={'Reservations:  EMAIL | +XX XXX XXX XXX'} />

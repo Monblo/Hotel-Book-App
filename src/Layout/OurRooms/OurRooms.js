@@ -15,7 +15,8 @@ import room2 from '../../images/room2.jpg';
 
 
 export const OurRooms = () => {
-    return <ContainerStyled color={({theme}) => theme.colors.background}>
+    return (
+        <ContainerStyled id='rooms' color={({theme}) => theme.colors.background}>
 
         <H2 title={'Our Rooms'} color={({theme}) => theme.colors.basic}/>
 
@@ -41,19 +42,21 @@ export const OurRooms = () => {
                 <P align={'left'} text={'PETITE JUNGLE PEACE'}/>
                 <P align={'left'} text={'Peaceful and private, kick back in comfort with lush views just steps away from our sun deck and a tropical pool.'}/>
                 <br />
-                <Li text={'View: Jungle'}/>
-                <br />
-                <Li text={'Floor: Ground'}/>
-                <br />
-                <Li text={'Size:  22 Sqm / 235 sqft'}/>
-                <br />
-                <Li text={'Bed: King'}/>
-                <br />
-                <Li text={'Sleeps: 2 guests'}/>
-                <br />
-                <Li text={'Bathroom: Shower'}/>
-                <br />
-                <Li text={'A/C 24-Hour'}/>
+                <ul style={{padding: '0'}}>
+                    <Li text={'View: Jungle'}/>
+                    <br />
+                    <Li text={'Floor: Ground'}/>
+                    <br />
+                    <Li text={'Size:  22 Sqm / 235 sqft'}/>
+                    <br />
+                    <Li text={'Bed: King'}/>
+                    <br />
+                    <Li text={'Sleeps: 2 guests'}/>
+                    <br />
+                    <Li text={'Bathroom: Shower'}/>
+                    <br />
+                    <Li text={'A/C 24-Hour'}/>
+                </ul>
             </div>
             <div className={'ourRooms'}>
                 <ImageStyled src={room2}/>
@@ -62,22 +65,25 @@ export const OurRooms = () => {
                 <P align={'left'} text={'STANDARD ROOM'} />
                 <P align={'left'} text={'Our most spacious rooms offer the utmost in privacy and comfort, adorned with bohemian textiles, tropical woods, and modern furnishings.'}/>
                 <br />
-                <Li text={'View: Pool & Jungle'}/>
-                <br />
-                <Li text={'Floor: Ground'}/>
-                <br />
-                <Li text={'Size:  40 Sqm / 430 sqft'}/>
-                <br />
-                <Li text={'Bed: King'}/>
-                <br />
-                <Li text={'Sleeps: 3 guests'}/>
-                <br />
-                <Li text={'Bathroom: Shower'}/>
-                <br />
-                <Li text={'A/C 24-Hour'}/>
-                <br />
-                <Li text={'Terrace: 9 Sqm / 100 sqft'}/>
+                <ul style={{padding: '0 '}}>
+                    <Li text={'View: Pool & Jungle'}/>
+                    <br />
+                    <Li text={'Floor: Ground'}/>
+                    <br />
+                    <Li text={'Size:  40 Sqm / 430 sqft'}/>
+                    <br />
+                    <Li text={'Bed: King'}/>
+                    <br />
+                    <Li text={'Sleeps: 3 guests'}/>
+                    <br />
+                    <Li text={'Bathroom: Shower'}/>
+                    <br />
+                    <Li text={'A/C 24-Hour'}/>
+                    <br />
+                    <Li text={'Terrace: 9 Sqm / 100 sqft'}/>
+                </ul>
             </div>
         </TextContainerStyled>
-    </ContainerStyled>
+    </ContainerStyled >
+    )
 }
