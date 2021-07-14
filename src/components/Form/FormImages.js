@@ -2,20 +2,29 @@ import React from "react";
 import {ImageStyled} from "../Image/Image.styles";
 import {Price} from "../Price/Price";
 import {ContainerFooterStyled} from "../Container/Container.styles";
-import room1 from '../../images/room1.jpg';
-import room2 from '../../images/room2.jpg';
 
-export const FormImages = () => {
+export const FormImages = ({rooms, getItems}) => {
+    if (rooms.length === 0) {
+        return (
+            <div >
+                <h3>unfortunately no rooms matched your search parameters</h3>
+            </div>
+        );
+    }
+
+    //get images
+    let images = getItems(rooms, 'image')
+
     return (
         <ContainerFooterStyled flex={'flex'} justify={'center'}>
-            <div className={'image__form__container'}>
-                <ImageStyled src={room1} />
-                <Price price={'50 '}/>
-            </div>
-            <div className={'image__form__container'}>
-                <ImageStyled src={room2}/>
-                <Price price={'100 '}/>
-            </div>
+            {images.map((item, index) => {
+                return (
+                    <div className={'image__form__container'} key={index}>
+                        <ImageStyled src={item}/>
+                        <Price price={rooms[index].price}/>
+                    </div>
+                )
+            })}
         </ContainerFooterStyled>
     )
 };

@@ -16,17 +16,14 @@ import data from "./data";
 const App = () => {
 
     const [form, setForm] = useState({
-        rooms: {},
+        rooms: [],
+        sortedRooms: [],
         type: 'All',
         capacity: 1,
         price: 0,
         minPrice: 0,
-        maxPrice: 100
+        maxPrice: 0
     });
-
-    const handleChange = (e) => {
-        setForm({...form, [e.target.name] : e.target.value})
-    };
 
     const formatData = (items) => {
         return items.map(item => {
@@ -36,14 +33,44 @@ const App = () => {
     };
 
     useEffect( () => {
-        setForm({...form, rooms: formatData(data)})
-        // console.log(form.rooms)
+        setForm({...form, rooms: formatData(data), sortedRooms: form.rooms,
+            maxPrice: Math.max(...form.rooms.map(item => item.price))})
     },[]);
 
-    const roomContextValue = {...form, handleChange}
+    const filteredRooms = (form) => {
+        let { rooms,
+            type,
+            capacity,
+            price } = form
+
+        let tempRooms = [...rooms]
+        console.log(tempRooms)
+        capacity = parseInt(capacity)
+        price = parseInt(price)
+
+        //filter by type
+        if (type !== 'All') {
+            tempRooms = tempRooms.filter(item => item.type === type)
+        }
+
+        //filter by capacity
+        if (capacity !== 1) {
+            tempRooms = tempRooms.filter(item => item.capacity >= capacity)
+        }
+
+        //filter by price
+        tempRooms = tempRooms.filter(item => item.price <= price);
+
+        setForm({...form, sortedRooms: tempRooms})
+    };
+
+    const handleChange = (e) => {
+        setForm({...form, [e.target.name] : e.target.value})
+        // filteredRooms({form});
+    };
 
   return (
-      <RoomContext.Provider value={roomContextValue}>
+      <RoomContext.Provider value={{...form, handleChange}}>
    <HashRouter>
        <>
        <Switch>

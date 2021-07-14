@@ -3,15 +3,15 @@ import '../../App.scss'
 import {H2} from "../H2/H2";
 import {ButtonForm} from "../Button/Button";
 import {FormStyled} from "./Form.styles";
-import {FormImages} from "./FormImages";
 import {CalendarPicker} from "../Calendar/Calendar";
 import {RoomContext} from "../../Layout/Context/RoomContext";
+import {FormImages} from "./FormImages";
 
 export const Form = () => {
     const context = useContext(RoomContext);
-    const {rooms, type, capacity, price, minPrice, maxPrice, handleChange} = context;
-    // console.log(rooms)
-    // console.log(context)
+    const {rooms, sortedRooms, type, capacity, price, minPrice, maxPrice, handleChange} = context;
+    console.log(rooms)
+    console.log(context)
 
     // get items from data
     const getItems = (items, value) => {
@@ -19,7 +19,7 @@ export const Form = () => {
     };
 
     // get all types
-    let types = getItems(rooms, 'name');
+    let types = getItems(rooms, 'type');
     types = ['All', ...types];
 
     // //get all capacity
@@ -29,7 +29,7 @@ export const Form = () => {
     return (
         <section>
             <H2 title={'book room'} color={({theme}) => theme.colors.title}/>
-            <hr />
+            <hr/>
             <FormStyled>
                 {/*select type*/}
                 <div>
@@ -39,7 +39,7 @@ export const Form = () => {
                         id='type'
                         value={type}
                         onChange={handleChange}
-                        >
+                    >
                         {types.map((item, index) => <option key={index} value={item}>{item}</option>)}
                     </select>
                 </div>
@@ -51,7 +51,7 @@ export const Form = () => {
                         id='capacity'
                         value={capacity}
                         onChange={handleChange}
-                        >
+                    >
                         {guests.map((item, index) => <option key={index} value={item}>{item}</option>)}
                     </select>
                 </div>
@@ -62,7 +62,7 @@ export const Form = () => {
                         type='range'
                         name='price'
                         id='price'
-                        step = '50'
+                        step='50'
                         min={minPrice}
                         max={maxPrice}
                         onChange={handleChange}
@@ -76,7 +76,7 @@ export const Form = () => {
                 </div>
                 <ButtonForm text={'SUBMIT'}/>
             </FormStyled>
-            <FormImages />
+            <FormImages rooms={sortedRooms} getItems={getItems}/>
         </section>
     )
 }

@@ -1,3 +1,6 @@
+import room1 from "./images/room1.jpg";
+import room2 from "./images/room2.jpg";
+
 export default [
     {
         sys: {
@@ -8,7 +11,8 @@ export default [
             type: 'standard',
             price: 50,
             capacity: 2,
-            qty: 10
+            qty: 10,
+            image: room1
         }
     },
     {
@@ -20,7 +24,8 @@ export default [
             type: 'deluxe',
             price: 100,
             capacity: 3,
-            qty: 4
+            qty: 4,
+            image: room2
         }
     }
 ]
