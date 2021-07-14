@@ -1,18 +1,14 @@
 Tech stack:
 
-```
-<ul> 
-<li>ES6</li>
-<li>SCSS</li>
-<li>REACT</li>
-<li>Styled Components</li>
-<li>Styleguidist</li>
-<li>ReactRouter</li>
-<li>ReactContext</li>
-<li>Weather API</li>
-<li>React Date Picker</li>
-</ul>
-```
+1. ES6
+2. SCSS
+3. REACT
+4. Styled Components
+5. Styleguidist
+6. ReactRouter
+7. ReactContext
+8. Weather API
+9. React Date Picker
 
 # Getting Started with Create React App
 
