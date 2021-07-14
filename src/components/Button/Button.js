@@ -15,13 +15,11 @@ export const ButtonForm = ({text}) => {
 };
 
 Button.propTypes = {
-    children: propTypes.string,
+    text: propTypes.string,
     color: propTypes.string,
     onClick: propTypes.func
 }
 
 Button.defaultProps = {
-    children: require,
     color: '#C4C4C4',
-    onClick: Function
 }

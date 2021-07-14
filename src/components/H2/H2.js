@@ -11,11 +11,11 @@ export const H2Yellow = ({title, color, size}) => {
 }
 
 H2.propTypes = {
-    text: propTypes.string,
-    primary: propTypes.bool
+    title: propTypes.string,
+    color: propTypes.string,
+    fontSize: propTypes.number
 }
 
 H2.defaultProps = {
-    text: 'title',
-    primary: false
+    fontSize: '2.25rem'
 }

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {CarouselStyled} from "../../components/CarouselContainer/Carousel.styles";
-import {ImageCarouselStyled, ImageStyled} from "../../components/Image/Image.styles";
+import {CarouselStyled} from "./Carousel.styles";
+import {ImageCarouselStyled} from "../Image/Image.styles";
 import {MdKeyboardArrowRight, MdKeyboardArrowLeft} from 'react-icons/md';
-import {ArrowStyled} from "../../components/Arrow/Arrow.styles";
+import {ArrowStyled} from "../Arrow/Arrow.styles";
 import styled from "styled-components";
 import hotel1 from "../../images/hotel1.jpg";
 import hotel2 from "../../images/hotel2.jpg";

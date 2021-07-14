@@ -40,7 +40,6 @@ const App = () => {
         // console.log(form.rooms)
     },[]);
 
-
     const roomContextValue = {...form, handleChange}
 
   return (
