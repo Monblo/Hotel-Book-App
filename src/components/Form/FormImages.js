@@ -7,7 +7,7 @@ export const FormImages = ({rooms, getItems}) => {
     if (rooms.length === 0) {
         return (
             <div >
-                <h3>unfortunately no rooms matched your search parameters</h3>
+                <h3>No rooms matched the parameters</h3>
             </div>
         );
     }

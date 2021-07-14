@@ -1,3 +1,19 @@
+Tech stack:
+
+```
+<ul> 
+<li>ES6</li>
+<li>SCSS</li>
+<li>REACT</li>
+<li>Styled Components</li>
+<li>Styleguidist</li>
+<li>ReactRouter</li>
+<li>ReactContext</li>
+<li>Weather API</li>
+<li>React Date Picker</li>
+</ul>
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
