@@ -10,12 +10,12 @@ import {FormImages} from "./FormImages";
 export const Form = () => {
     const context = useContext(RoomContext);
     const {rooms, sortedRooms, type, capacity, price, minPrice, maxPrice, handleChange} = context;
-    console.log(rooms)
+    // console.log(rooms)
     console.log(context)
 
     // get items from data
     const getItems = (items, value) => {
-        return [...new Set(items.map(el => el[value]))]
+        return items.map(el => el[value])
     };
 
     // get all types

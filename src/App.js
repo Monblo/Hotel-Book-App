@@ -37,39 +37,55 @@ const App = () => {
             maxPrice: Math.max(...form.rooms.map(item => item.price))})
     },[]);
 
-    const filteredRooms = (form) => {
-        let { rooms,
-            type,
-            capacity,
-            price } = form
-
-        let tempRooms = [...rooms]
-        console.log(tempRooms)
-        capacity = parseInt(capacity)
-        price = parseInt(price)
-
-        //filter by type
-        if (type !== 'All') {
-            tempRooms = tempRooms.filter(item => item.type === type)
+    useEffect( () => {
+        if (form.rooms.length === 0) {
+            return
+        }
+        let tempRooms
+        if (form.type === 'All') {
+         tempRooms = [...form.rooms]
+    } else {
+            tempRooms = form.rooms.filter(item => item.type === form.type)
         }
 
-        //filter by capacity
-        if (capacity !== 1) {
-            tempRooms = tempRooms.filter(item => item.capacity >= capacity)
-        }
+        setForm({...form, sortedRooms: tempRooms })
+    },[form.type]);
 
-        //filter by price
-        tempRooms = tempRooms.filter(item => item.price <= price);
-
-        setForm({...form, sortedRooms: tempRooms})
-    };
+    // const filteredRooms = (form) => {
+    //     let { rooms,
+    //         type,
+    //         capacity,
+    //         price } = form
+    //
+    //     let tempRooms = [...rooms]
+    //     // capacity = parseInt(capacity)
+    //     // price = parseInt(price)
+    //
+    //     //filter by type
+    //     if (type !== 'All') {
+    //         tempRooms = tempRooms.filter(item => item.type === type)
+    //     }
+    //
+    //     //filter by capacity
+    //     if (capacity !== 1) {
+    //         tempRooms = tempRooms.filter(item => item.capacity >= capacity)
+    //     }
+    //
+    //     //filter by price
+    //     tempRooms = tempRooms.filter(item => item.price <= price);
+    //
+    //     this.setState({sortedRooms:tempRooms})
+    //
+    //     // setForm({...form, sortedRooms: tempRooms})
+    // };
 
     const handleChange = (e) => {
         setForm({...form, [e.target.name] : e.target.value})
-        // filteredRooms({form});
+        console.log(form.sortedRooms)
+        // filteredRooms(form);
     };
 
-  return (
+    return (
       <RoomContext.Provider value={{...form, handleChange}}>
    <HashRouter>
        <>
