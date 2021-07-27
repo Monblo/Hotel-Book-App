@@ -1,3 +1,11 @@
+Bootcamp Final Project
+
+Responsive hotel room booking App with filter form, photos slider, wheater data API.
+
+Next features:
+-Firebase logging in with facebook
+-saving data in API
+
 Tech stack:
 
 1. ES6
