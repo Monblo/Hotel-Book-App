@@ -27,5 +27,5 @@ export default [
             qty: 4,
             image: room2
         }
-    },
+    }
 ]

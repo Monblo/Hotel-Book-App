@@ -69,7 +69,7 @@ export const Form = () => {
                         className={'form__input'}
                     />
                 </div>
-                {/*date calendar*/}
+                {/*date picker*/}
                 <div>
                     <label htmlFor={'date'}>date</label>
                     <CalendarPicker id={'date'}/>

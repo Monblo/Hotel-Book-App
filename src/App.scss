@@ -33,7 +33,7 @@ hr {
 .image__form__container {
   margin: 3.125rem;
   position: relative;
-  width: 100%
+  width: 50%
 }
 
 label {
@@ -148,9 +148,6 @@ label {
 .weather {
   max-height: 12.5rem;
   width: 18.75rem;
-  //background-image: url('./images/forecast.jpg');
-  //background-size: cover;
-  //background-position: center;
   background-color: lightblue;
   margin: 0 auto;
   border-radius: 1.875rem;

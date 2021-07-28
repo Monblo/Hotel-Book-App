@@ -25,6 +25,7 @@ const App = () => {
         maxPrice: 0
     });
 
+    //format data into array
     const formatData = (items) => {
         return items.map(item => {
             let id = item.sys.id;
@@ -37,52 +38,31 @@ const App = () => {
             maxPrice: Math.max(...form.rooms.map(item => item.price))})
     },[]);
 
+    //filter rooms
     useEffect( () => {
         if (form.rooms.length === 0) {
             return
         }
-        let tempRooms
-        if (form.type === 'All') {
-         tempRooms = [...form.rooms]
-    } else {
-            tempRooms = form.rooms.filter(item => item.type === form.type)
+        let tempRooms = [...form.rooms]
+        //filter by type
+        if (form.type !== 'All') {
+            tempRooms = tempRooms.filter(item => item.type === form.type)
+        }
+        //filter by capacity
+        if (form.capacity !== 1) {
+            tempRooms = tempRooms.filter(item => item.capacity >= form.capacity)
+        }
+        //filter by price
+        if (form.price !== 0) {
+            tempRooms = tempRooms.filter(item => item.price <= form.price)
         }
 
         setForm({...form, sortedRooms: tempRooms })
-    },[form.type]);
+    },[form.type, form.capacity, form.price]);
 
-    // const filteredRooms = (form) => {
-    //     let { rooms,
-    //         type,
-    //         capacity,
-    //         price } = form
-    //
-    //     let tempRooms = [...rooms]
-    //     // capacity = parseInt(capacity)
-    //     // price = parseInt(price)
-    //
-    //     //filter by type
-    //     if (type !== 'All') {
-    //         tempRooms = tempRooms.filter(item => item.type === type)
-    //     }
-    //
-    //     //filter by capacity
-    //     if (capacity !== 1) {
-    //         tempRooms = tempRooms.filter(item => item.capacity >= capacity)
-    //     }
-    //
-    //     //filter by price
-    //     tempRooms = tempRooms.filter(item => item.price <= price);
-    //
-    //     this.setState({sortedRooms:tempRooms})
-    //
-    //     // setForm({...form, sortedRooms: tempRooms})
-    // };
-
+    //change form value
     const handleChange = (e) => {
         setForm({...form, [e.target.name] : e.target.value})
-        console.log(form.sortedRooms)
-        // filteredRooms(form);
     };
 
     return (
