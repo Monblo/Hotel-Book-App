@@ -9,7 +9,6 @@ import {
 import {Booking} from "./views/Booking/Booking";
 import {NotFound} from "./views/NotFound/NotFound";
 import {RoomContext} from "./Layout/Context/RoomContext";
-import data from "./data";
 import {db} from "./firebase";
 
 const App = () => {
