@@ -4,14 +4,13 @@ import {Home} from "./views/Home/Home";
 import {
     HashRouter,
     Route,
-    Link,
     Switch,
-    NavLink,
 } from 'react-router-dom';
 import {Booking} from "./views/Booking/Booking";
 import {NotFound} from "./views/NotFound/NotFound";
 import {RoomContext} from "./Layout/Context/RoomContext";
 import data from "./data";
+import {db} from "./firebase";
 
 const App = () => {
 
@@ -22,24 +21,38 @@ const App = () => {
         capacity: 1,
         price: 0,
         minPrice: 0,
-        maxPrice: 0
+        maxPrice: 0,
+        rooms1: []
     });
 
-    //format data into array
-    const formatData = (items) => {
-        return items.map(item => {
-            let id = item.sys.id;
-            return {...item.fields, id}
-        })
-    };
-
-    useEffect( () => {
-        setForm({...form, rooms: formatData(data), sortedRooms: form.rooms,
-            maxPrice: Math.max(...form.rooms.map(item => item.price))})
+    //get data from firestore to state
+    useEffect(() => {
+        db.collection('fields')
+            .get()
+            .then(promise => {
+                let items = []
+                promise.forEach(doc => {
+                    const data = doc.data()
+                    items = [...items, data]
+                })
+                setForm(prev => {
+                    return {...prev, rooms: items}
+                })
+            })
+            .catch(error => console.log(error))
     },[]);
 
+    useEffect(() => {
+        setForm(prev => {
+            return {
+                ...prev, sortedRooms: form.rooms,
+                maxPrice: Math.max(...form.rooms.map(item => item.price))
+            }
+        })
+    }, []);
+
     //filter rooms
-    useEffect( () => {
+    useEffect(() => {
         if (form.rooms.length === 0) {
             return
         }
@@ -57,27 +70,31 @@ const App = () => {
             tempRooms = tempRooms.filter(item => item.price <= form.price)
         }
 
-        setForm({...form, sortedRooms: tempRooms })
-    },[form.type, form.capacity, form.price]);
+        setForm({...form, sortedRooms: tempRooms})
+    }, [form.type, form.capacity, form.price]);
 
     //change form value
     const handleChange = (e) => {
-        setForm({...form, [e.target.name] : e.target.value})
+        setForm(prev => {
+            return {
+                ...prev, [e.target.name]: e.target.value
+            }
+        })
     };
 
     return (
-      <RoomContext.Provider value={{...form, handleChange}}>
-   <HashRouter>
-       <>
-       <Switch>
-           <Route exact path='/' component={Home}/>
-           <Route path='/booking' component={Booking}/>
-           <Route path='/*' component={NotFound}/>
-       </Switch>
-       </>
-   </HashRouter>
-      </RoomContext.Provider>
-  );
+        <RoomContext.Provider value={{...form, handleChange}}>
+            <HashRouter>
+                <>
+                    <Switch>
+                        <Route exact path='/' component={Home}/>
+                        <Route path='/booking' component={Booking}/>
+                        <Route path='/*' component={NotFound}/>
+                    </Switch>
+                </>
+            </HashRouter>
+        </RoomContext.Provider>
+    );
 }
 
 export default App;

@@ -8,10 +8,7 @@ import {RoomContext} from "../../Layout/Context/RoomContext";
 import {FormImages} from "./FormImages";
 
 export const Form = () => {
-    const context = useContext(RoomContext);
-    const {rooms, sortedRooms, type, capacity, price, minPrice, maxPrice, handleChange} = context;
-    // console.log(rooms)
-    console.log(context)
+    const {rooms, sortedRooms, type, capacity, price, minPrice, maxPrice, handleChange} = useContext(RoomContext);
 
     // get items from data
     const getItems = (items, value) => {
@@ -74,7 +71,7 @@ export const Form = () => {
                     <label htmlFor={'date'}>date</label>
                     <CalendarPicker id={'date'}/>
                 </div>
-                <ButtonForm text={'SUBMIT'}/>
+                <ButtonForm text={'SUBMIT'} type='submit'/>
             </FormStyled>
             <FormImages rooms={sortedRooms} getItems={getItems}/>
         </section>
