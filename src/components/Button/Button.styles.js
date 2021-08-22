@@ -16,6 +16,7 @@ export const ButtonFormStyled = styled(ButtonStyled)`
   color: ${({theme}) => theme.colors.dark};
   border: 2px solid ${({theme}) => theme.colors.dark};
   margin: 0;
+  cursor: pointer;
 
   ${({theme}) => theme.media.mobile} {
     margin-top: 1.5rem

@@ -1,10 +1,8 @@
-Bootcamp Final Project
-
-Responsive hotel room booking App with filter form, photos slider, wheater data API.
+Responsive hotel room booking App with filter form, photos slider, weather data API.
 
 Next features:
--Firebase logging in with facebook
--saving data in API
+-firebase logging in
+-booking form improvement
 
 Tech stack:
 
@@ -17,6 +15,7 @@ Tech stack:
 7. ReactContext
 8. Weather API
 9. React Date Picker
+10. Firestore
 
 # Getting Started with Create React App
 

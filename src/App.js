@@ -20,8 +20,7 @@ const App = () => {
         capacity: 1,
         price: 0,
         minPrice: 0,
-        maxPrice: 0,
-        rooms1: []
+        maxPrice: 0
     });
 
     //get data from firestore to state
@@ -39,7 +38,7 @@ const App = () => {
                 })
             })
             .catch(error => console.log(error))
-    },[]);
+    }, []);
 
     useEffect(() => {
         setForm(prev => {
